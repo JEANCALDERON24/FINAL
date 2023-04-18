@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
+
+
 import pea2.onpe.services.IGrupoVotacionService;
+import pea2.onpe.services.IexamenService;
 
 @Configuration
 @CrossOrigin
@@ -42,6 +45,14 @@ private IGrupoVotacionService IGrupoVotacion;
 	    	modelo.addAttribute("actas", IGrupoVotacion.getGrupoVotacion(id));
 	    	return"actas_info";
 	    }
+		@Autowired
+		private IexamenService iexamen;
+		
+		@RequestMapping("/resumen")
+		public String resumen(Model modelo){
+			modelo.addAttribute("resumenes", iexamen.getExamen());
+		    return "resumen";
+		}
 
 
 }
