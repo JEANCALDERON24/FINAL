@@ -48,10 +48,10 @@ private IGrupoVotacionService IGrupoVotacion;
 		@Autowired
 		private IexamenService iexamen;
 		
-		@RequestMapping("/resumen")
+		@RequestMapping("/Final")
 		public String resumen(Model modelo){
 			modelo.addAttribute("resumenes", iexamen.getExamen());
-		    return "resumen";
+		    return "ExamenFinal";
 		}
 
 
