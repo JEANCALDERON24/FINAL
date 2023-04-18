@@ -53,6 +53,10 @@ private IGrupoVotacionService IGrupoVotacion;
 			modelo.addAttribute("resumenes", iexamen.getExamen());
 		    return "ExamenFinal";
 		}
+	    @GetMapping("/FINAL2")
+	    public String general() {
+		return "FPresidencial";
+	     }
 
 
 }
